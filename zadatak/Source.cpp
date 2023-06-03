@@ -132,6 +132,14 @@ public:
 			v++;
 
 		}
+		int z = 20;
+		while (z != 30)
+		{
+			map.setElement('X', pozic(z, 40));
+			map.setElement('X', pozic(20, z));
+			z++;
+
+		}
 		map.setElement('X', pozic(28, 28));
 
 
@@ -240,21 +248,22 @@ int main() {
 	//--------------------------------------------------------------------
 	do
 	{
-		cout << "Unesite retke A: ";
+		cout << "minimum za x ili y je 0!" << endl;
+		cout << "maximum za x ili y je 50!" << endl;
+		cout << "Unesite stupac(x-koordinata) A: ";
 		cin >> AX;
 
-		cout << "Unesite stupac A: ";
+		cout << "Unesite redak(y-koordinata) A: ";
 		cin >> AY;
 
-		cout << "Unesite retke B: ";
+		cout << "Unesite stupac(x-koordinata) B: ";
 		cin >> BX;
 
-		cout << "Unesite stupac B: ";
+		cout << "Unesite redak(y-koordinata) B: ";
 		cin >> BY;
 
 		Solver radi(pozic(AX - 1, AY - 1), pozic(BX - 1, BY - 1), velicinaMape);
 		radi.aStar();
-
 		
 
 		cout << endl;
