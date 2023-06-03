@@ -3,6 +3,7 @@
 #include <list>
 #include <vector>
 #include <algorithm>
+//#include<SFML/Graphics.hpp>
 
 using namespace std;
 const int velicinaMape = 50;
@@ -211,9 +212,29 @@ public:
 };
 
 int main() {
+	
+	/*
+	sf::RenderWindow window(sf::VideoMode(800, 600), "Hello, SFML world!");
+	window.setFramerateLimit(60);
+	
+	while (window.isOpen())
+	{
+		sf::Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+				window.close();
+		}
+		
+		window.clear();
 
+		window.display();
+	}
+	*/
+	
 	int AX, AY, BX, BY;
 	char again;
+
 	//--------------------------------------------------------------------
 	// NPAPRAVIO SAM OZNAKE "P" KAO PUT DO CILJA, A "X" KAO PREPREKE
 	//--------------------------------------------------------------------
@@ -234,10 +255,15 @@ int main() {
 		Solver radi(pozic(AX - 1, AY - 1), pozic(BX - 1, BY - 1), velicinaMape);
 		radi.aStar();
 
+		
+
 		cout << endl;
 		cout << "Ponovo(y = da // n = ne): ";
 		cin >> again;
+
 	} while (again == 'y');
+
+
 
 
 	return 0;
